@@ -1,0 +1,16 @@
+---
+- name: Hardening Server1
+  hosts: Server1
+  become: yes
+  roles:
+    - Server1
+
+
+- name: Centralized Logging with Filebeat to Wazuh
+  hosts: Client
+  become: yes
+  roles:
+    - Client
+
+  vars:
+    wazuh_manager_ip: "192.168.239.148"
